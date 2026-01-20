@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>累計アプリ</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gray-100 flex items-start justify-center py-10">
+
+    <!-- カードコンテナ -->
+    <div class="w-full max-w-lg bg-white shadow-md rounded-xl p-6">
+        <h1 class="text-2xl font-semibold mb-4">Hello Page</h1>
+
+        <!-- メッセージ表示 -->
+        <p class="mb-4 text-gray-700" th:text="${msg}">メッセージを入力してください</p>
+
+        <!-- 入力フォーム -->
+        <form method="post" action=".">
+            <label for="text1" class="block text-sm font-medium text-gray-700 mb-1">
+                メッセージ
+            </label>
+
+            <div class="flex gap-2">
+                <input
+                    id="text1"
+                    type="text"
+                    name="text1"
+                    placeholder="メッセージを入力してください"
+                    th:value="${value}"
+                    class="flex-1 border border-gray-300 rounded-md px-3 py-2 text-sm
+                           focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
+                >
+                <button
+                    type="submit"
+                    class="shrink-0 px-4 py-2 text-sm font-medium rounded-md
+                           bg-blue-600 text-white hover:bg-blue-700
+                           focus:outline-none focus:ring-2 focus:ring-blue-400"
+                >
+                    送信
+                </button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
